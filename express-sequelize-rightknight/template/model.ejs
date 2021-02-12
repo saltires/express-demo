@@ -13,47 +13,15 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    <%=table_name%>.init({
-        id: {
-            type: DataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true, //设置自动增长
-            comment: '自增id', //添加描述
+    <%=table_name%>.init({<% for (var i = 0; i < Object.keys(config).length; i++) {%>
+        <%if (config[i].key !== 'id') {%>
+        <%=config[i].key%>: {
+            type: <%=config[i].type%>,
+            <% if (config[i].primaryKey) {%>primaryKey: <%=config[i].primaryKey%>,<% } %>
+            <% if (config[i].autoIncrement) {%>autoIncrement: <%=config[i].autoIncrement%>,<% } %>
         },
-        author_id: {
-            type: DataTypes.BIGINT,
-        },
-        pub_id: {
-            type: DataTypes.BIGINT,
-        },
-        nick_name: {
-            type: DataTypes.STRING,
-        },
-        img1: {
-            type: DataTypes.STRING,
-        },
-        img2: {
-            type: DataTypes.STRING,
-        },
-        content: {
-            type: DataTypes.TEXT,
-        },
-        reply: {
-            type: DataTypes.TEXT,
-        },
-        status: {
-            type: DataTypes.INTEGER,
-        },
-        message_status: {
-            type: DataTypes.INTEGER,
-        },
-        create_time: {
-            type: DataTypes.BIGINT,
-        },
-        modify_time: {
-            type: DataTypes.BIGINT,
-        }
-    }, {
+        <%}%>
+        <%}%>},{
         sequelize,
         modelName: '<%=table_name%>',
         timestamps: false,

@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class articles_knights_info extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,11 +13,11 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    articles_knights_info.init({
         
         
         
-        author_id: {
+        fk_article_id: {
             type: DataTypes.BIGINT,
             
             
@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        pub_id: {
+        fk_knight_id: {
             type: DataTypes.BIGINT,
             
             
@@ -33,23 +33,15 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        content: {
-            type: DataTypes.TEXT,
+        remarks: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        reply: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        status: {
+        frozen_status: {
             type: DataTypes.INTEGER,
             
             
@@ -57,8 +49,8 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        message_status: {
-            type: DataTypes.INTEGER,
+        is_delete: {
+            type: DataTypes.SMALLINT,
             
             
         },
@@ -79,11 +71,19 @@ module.exports = (sequelize, DataTypes) => {
             
         },
         
+        
+        
+        knight_type: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            
+        },
+        
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'articles_knights_info',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return articles_knights_info;
 };

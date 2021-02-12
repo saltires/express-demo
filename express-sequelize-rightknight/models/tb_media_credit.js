@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class tb_media_credit extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,43 +13,11 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    tb_media_credit.init({
         
         
         
-        author_id: {
-            type: DataTypes.BIGINT,
-            
-            
-        },
-        
-        
-        
-        pub_id: {
-            type: DataTypes.BIGINT,
-            
-            
-        },
-        
-        
-        
-        content: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        reply: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        status: {
+        level_type: {
             type: DataTypes.INTEGER,
             
             
@@ -57,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        message_status: {
+        level_score_min: {
             type: DataTypes.INTEGER,
             
             
@@ -65,25 +33,41 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        create_time: {
-            type: DataTypes.BIGINT,
+        level_value: {
+            type: DataTypes.INTEGER,
             
             
         },
         
         
         
-        modify_time: {
-            type: DataTypes.BIGINT,
+        level_explain: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        remark: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        level_score_max: {
+            type: DataTypes.INTEGER,
             
             
         },
         
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'tb_media_credit',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return tb_media_credit;
 };

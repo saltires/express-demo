@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class knight_article_statistics extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,43 +13,11 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    knight_article_statistics.init({
         
         
         
-        author_id: {
-            type: DataTypes.BIGINT,
-            
-            
-        },
-        
-        
-        
-        pub_id: {
-            type: DataTypes.BIGINT,
-            
-            
-        },
-        
-        
-        
-        content: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        reply: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        status: {
+        articles_count: {
             type: DataTypes.INTEGER,
             
             
@@ -57,8 +25,72 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        message_status: {
+        articles_vio_count: {
             type: DataTypes.INTEGER,
+            
+            
+        },
+        
+        
+        
+        knight_id: {
+            type: DataTypes.BIGINT,
+            
+            
+        },
+        
+        
+        
+        kaccount_name: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        knight_type: {
+            type: DataTypes.INTEGER,
+            
+            
+        },
+        
+        
+        
+        right_level: {
+            type: DataTypes.INTEGER,
+            
+            
+        },
+        
+        
+        
+        effective_rate: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        correct_rate: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        is_delete: {
+            type: DataTypes.INTEGER,
+            
+            
+        },
+        
+        
+        
+        remark: {
+            type: DataTypes.STRING,
             
             
         },
@@ -81,9 +113,9 @@ module.exports = (sequelize, DataTypes) => {
         
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'knight_article_statistics',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return knight_article_statistics;
 };

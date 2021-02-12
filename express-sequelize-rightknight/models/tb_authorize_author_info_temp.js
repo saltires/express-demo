@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class tb_authorize_author_info_temp extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,11 +13,11 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    tb_authorize_author_info_temp.init({
         
         
         
-        author_id: {
+        fk_author_id: {
             type: DataTypes.BIGINT,
             
             
@@ -25,7 +25,31 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        pub_id: {
+        nick_name: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        photo_url: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        tags: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        first_publish_time: {
             type: DataTypes.BIGINT,
             
             
@@ -33,23 +57,15 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        content: {
-            type: DataTypes.TEXT,
+        last_publish_time: {
+            type: DataTypes.BIGINT,
             
             
         },
         
         
         
-        reply: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        status: {
+        republish_times: {
             type: DataTypes.INTEGER,
             
             
@@ -57,7 +73,7 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        message_status: {
+        article_count: {
             type: DataTypes.INTEGER,
             
             
@@ -71,19 +87,11 @@ module.exports = (sequelize, DataTypes) => {
             
         },
         
-        
-        
-        modify_time: {
-            type: DataTypes.BIGINT,
-            
-            
-        },
-        
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'tb_authorize_author_info_temp',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return tb_authorize_author_info_temp;
 };

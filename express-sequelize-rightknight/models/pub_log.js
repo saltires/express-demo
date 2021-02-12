@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class pub_log extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,15 +13,7 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
-        
-        
-        
-        author_id: {
-            type: DataTypes.BIGINT,
-            
-            
-        },
+    pub_log.init({
         
         
         
@@ -33,7 +25,31 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        content: {
+        page: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        action: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        action_memo: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        content_before: {
             type: DataTypes.TEXT,
             
             
@@ -41,7 +57,7 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        reply: {
+        content_after: {
             type: DataTypes.TEXT,
             
             
@@ -49,23 +65,15 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        status: {
-            type: DataTypes.INTEGER,
+        IP: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        message_status: {
-            type: DataTypes.INTEGER,
-            
-            
-        },
-        
-        
-        
-        create_time: {
+        time_occur: {
             type: DataTypes.BIGINT,
             
             
@@ -73,17 +81,17 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        modify_time: {
-            type: DataTypes.BIGINT,
+        dt: {
+            type: DataTypes.STRING,
             
             
         },
         
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'pub_log',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return pub_log;
 };

@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class knight_log extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,11 +13,11 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    knight_log.init({
         
         
         
-        author_id: {
+        knight_id: {
             type: DataTypes.BIGINT,
             
             
@@ -25,7 +25,55 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        pub_id: {
+        page: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        action: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        action_memo: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        content_before: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        content_after: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        IP: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        time_occur: {
             type: DataTypes.BIGINT,
             
             
@@ -33,57 +81,17 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        content: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        reply: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        status: {
-            type: DataTypes.INTEGER,
-            
-            
-        },
-        
-        
-        
-        message_status: {
-            type: DataTypes.INTEGER,
-            
-            
-        },
-        
-        
-        
-        create_time: {
-            type: DataTypes.BIGINT,
-            
-            
-        },
-        
-        
-        
-        modify_time: {
-            type: DataTypes.BIGINT,
+        dt: {
+            type: DataTypes.STRING,
             
             
         },
         
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'knight_log',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return knight_log;
 };

@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class tb_lawsuit_info extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,11 +13,35 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    tb_lawsuit_info.init({
         
         
         
-        author_id: {
+        code: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        vio_party: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        law_firm: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        appeal_time: {
             type: DataTypes.BIGINT,
             
             
@@ -25,7 +49,7 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        pub_id: {
+        win_time: {
             type: DataTypes.BIGINT,
             
             
@@ -33,16 +57,8 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        content: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        reply: {
-            type: DataTypes.TEXT,
+        result: {
+            type: DataTypes.STRING,
             
             
         },
@@ -50,14 +66,14 @@ module.exports = (sequelize, DataTypes) => {
         
         
         status: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.TINYINT,
             
             
         },
         
         
         
-        message_status: {
+        sort: {
             type: DataTypes.INTEGER,
             
             
@@ -81,9 +97,9 @@ module.exports = (sequelize, DataTypes) => {
         
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'tb_lawsuit_info',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return tb_lawsuit_info;
 };

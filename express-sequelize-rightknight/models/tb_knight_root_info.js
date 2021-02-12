@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class tb_knight_root_info extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,11 +13,19 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    tb_knight_root_info.init({
         
         
         
-        author_id: {
+        knight_id: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        menu_id: {
             type: DataTypes.BIGINT,
             
             
@@ -25,40 +33,8 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        pub_id: {
+        creater: {
             type: DataTypes.BIGINT,
-            
-            
-        },
-        
-        
-        
-        content: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        reply: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        status: {
-            type: DataTypes.INTEGER,
-            
-            
-        },
-        
-        
-        
-        message_status: {
-            type: DataTypes.INTEGER,
             
             
         },
@@ -81,9 +57,9 @@ module.exports = (sequelize, DataTypes) => {
         
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'tb_knight_root_info',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return tb_knight_root_info;
 };

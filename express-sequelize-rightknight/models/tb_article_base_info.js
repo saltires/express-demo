@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class tb_article_base_info extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,11 +13,11 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    tb_article_base_info.init({
         
         
         
-        author_id: {
+        fk_author_id: {
             type: DataTypes.BIGINT,
             
             
@@ -25,8 +25,8 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        pub_id: {
-            type: DataTypes.BIGINT,
+        is_authorized: {
+            type: DataTypes.INTEGER,
             
             
         },
@@ -34,22 +34,14 @@ module.exports = (sequelize, DataTypes) => {
         
         
         content: {
-            type: DataTypes.TEXT,
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        reply: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        status: {
+        article_auth_status: {
             type: DataTypes.INTEGER,
             
             
@@ -57,8 +49,16 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        message_status: {
+        article_status: {
             type: DataTypes.INTEGER,
+            
+            
+        },
+        
+        
+        
+        fk_first_publish_id: {
+            type: DataTypes.BIGINT,
             
             
         },
@@ -79,11 +79,19 @@ module.exports = (sequelize, DataTypes) => {
             
         },
         
+        
+        
+        distribution_status: {
+            type: DataTypes.INTEGER,
+            
+            
+        },
+        
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'tb_article_base_info',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return tb_article_base_info;
 };

@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class knight_handle_tort_recored extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,11 +13,11 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    knight_handle_tort_recored.init({
         
         
         
-        author_id: {
+        fk_article_id: {
             type: DataTypes.BIGINT,
             
             
@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        pub_id: {
+        fk_first_publish_id: {
             type: DataTypes.BIGINT,
             
             
@@ -33,23 +33,23 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        content: {
-            type: DataTypes.TEXT,
+        fk_articles_vio_id: {
+            type: DataTypes.BIGINT,
             
             
         },
         
         
         
-        reply: {
-            type: DataTypes.TEXT,
+        fk_knight_id: {
+            type: DataTypes.BIGINT,
             
             
         },
         
         
         
-        status: {
+        knight_type: {
             type: DataTypes.INTEGER,
             
             
@@ -57,8 +57,40 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        message_status: {
+        right_level: {
             type: DataTypes.INTEGER,
+            
+            
+        },
+        
+        
+        
+        operation_error: {
+            type: DataTypes.INTEGER,
+            
+            
+        },
+        
+        
+        
+        final_state: {
+            type: DataTypes.INTEGER,
+            
+            
+        },
+        
+        
+        
+        is_delete: {
+            type: DataTypes.SMALLINT,
+            
+            
+        },
+        
+        
+        
+        remark: {
+            type: DataTypes.STRING,
             
             
         },
@@ -79,11 +111,19 @@ module.exports = (sequelize, DataTypes) => {
             
         },
         
+        
+        
+        supervisor_audit_id: {
+            type: DataTypes.BIGINT,
+            
+            
+        },
+        
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'knight_handle_tort_recored',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return knight_handle_tort_recored;
 };

@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class tb_email_record extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,20 +13,28 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    tb_email_record.init({
         
         
         
-        author_id: {
-            type: DataTypes.BIGINT,
+        sender: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        pub_id: {
-            type: DataTypes.BIGINT,
+        receiver: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        title: {
+            type: DataTypes.STRING,
             
             
         },
@@ -34,15 +42,7 @@ module.exports = (sequelize, DataTypes) => {
         
         
         content: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        reply: {
-            type: DataTypes.TEXT,
+            type: DataTypes.STRING,
             
             
         },
@@ -57,15 +57,7 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        message_status: {
-            type: DataTypes.INTEGER,
-            
-            
-        },
-        
-        
-        
-        create_time: {
+        time: {
             type: DataTypes.BIGINT,
             
             
@@ -73,17 +65,17 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        modify_time: {
-            type: DataTypes.BIGINT,
+        memo: {
+            type: DataTypes.STRING,
             
             
         },
         
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'tb_email_record',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return tb_email_record;
 };

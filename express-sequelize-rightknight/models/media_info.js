@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class media_info extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,51 +13,35 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    media_info.init({
         
         
         
-        author_id: {
-            type: DataTypes.BIGINT,
+        media_account: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        pub_id: {
-            type: DataTypes.BIGINT,
+        media_name: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        content: {
-            type: DataTypes.TEXT,
+        media_intro: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        reply: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        status: {
-            type: DataTypes.INTEGER,
-            
-            
-        },
-        
-        
-        
-        message_status: {
+        source_type: {
             type: DataTypes.INTEGER,
             
             
@@ -79,11 +63,35 @@ module.exports = (sequelize, DataTypes) => {
             
         },
         
+        
+        
+        media_character: {
+            type: DataTypes.TINYINT,
+            
+            
+        },
+        
+        
+        
+        is_blackList: {
+            type: DataTypes.TINYINT,
+            
+            
+        },
+        
+        
+        
+        certifi_authority: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'media_info',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return media_info;
 };

@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class zz_temp3 extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,52 +13,26 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    zz_temp3.init({
         
-        
-        
-        author_id: {
-            type: DataTypes.BIGINT,
+        nick_name: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        pub_id: {
-            type: DataTypes.BIGINT,
+        site_homepage: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        content: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        reply: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        status: {
-            type: DataTypes.INTEGER,
-            
-            
-        },
-        
-        
-        
-        message_status: {
-            type: DataTypes.INTEGER,
+        site_name: {
+            type: DataTypes.STRING,
             
             
         },
@@ -66,6 +40,14 @@ module.exports = (sequelize, DataTypes) => {
         
         
         create_time: {
+            type: DataTypes.DATE,
+            
+            
+        },
+        
+        
+        
+        article_cnt: {
             type: DataTypes.BIGINT,
             
             
@@ -73,17 +55,33 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        modify_time: {
-            type: DataTypes.BIGINT,
+        money: {
+            type: DataTypes.DOUBLE,
+            
+            
+        },
+        
+        
+        
+        vio_cnt: {
+            type: DataTypes.DECIMAL,
+            
+            
+        },
+        
+        
+        
+        email: {
+            type: DataTypes.STRING,
             
             
         },
         
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'zz_temp3',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return zz_temp3;
 };

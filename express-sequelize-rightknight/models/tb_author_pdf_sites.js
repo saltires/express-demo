@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class tb_author_pdf_sites extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    tb_author_pdf_sites.init({
         
         
         
@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        pub_id: {
+        site_type: {
             type: DataTypes.BIGINT,
             
             
@@ -33,32 +33,16 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        content: {
-            type: DataTypes.TEXT,
+        nike_name: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        reply: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        status: {
-            type: DataTypes.INTEGER,
-            
-            
-        },
-        
-        
-        
-        message_status: {
-            type: DataTypes.INTEGER,
+        platform_url: {
+            type: DataTypes.STRING,
             
             
         },
@@ -79,11 +63,19 @@ module.exports = (sequelize, DataTypes) => {
             
         },
         
+        
+        
+        is_delete: {
+            type: DataTypes.SMALLINT,
+            
+            
+        },
+        
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'tb_author_pdf_sites',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return tb_author_pdf_sites;
 };

@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class faq_info extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,43 +13,11 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    faq_info.init({
         
         
         
-        author_id: {
-            type: DataTypes.BIGINT,
-            
-            
-        },
-        
-        
-        
-        pub_id: {
-            type: DataTypes.BIGINT,
-            
-            
-        },
-        
-        
-        
-        content: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        reply: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        status: {
+        type: {
             type: DataTypes.INTEGER,
             
             
@@ -57,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        message_status: {
+        title_order: {
             type: DataTypes.INTEGER,
             
             
@@ -65,25 +33,49 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        create_time: {
-            type: DataTypes.BIGINT,
+        title: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        modify_time: {
-            type: DataTypes.BIGINT,
+        question_order: {
+            type: DataTypes.INTEGER,
+            
+            
+        },
+        
+        
+        
+        question: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        answer: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        image_url: {
+            type: DataTypes.STRING,
             
             
         },
         
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'faq_info',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return faq_info;
 };

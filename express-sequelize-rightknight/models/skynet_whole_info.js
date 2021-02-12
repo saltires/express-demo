@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class skynet_whole_info extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,11 +13,11 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    skynet_whole_info.init({
         
         
         
-        author_id: {
+        article_cnt: {
             type: DataTypes.BIGINT,
             
             
@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        pub_id: {
+        article_intoskynet_cnt: {
             type: DataTypes.BIGINT,
             
             
@@ -33,32 +33,16 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        content: {
-            type: DataTypes.TEXT,
+        weixin_vio_cnt: {
+            type: DataTypes.BIGINT,
             
             
         },
         
         
         
-        reply: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        status: {
-            type: DataTypes.INTEGER,
-            
-            
-        },
-        
-        
-        
-        message_status: {
-            type: DataTypes.INTEGER,
+        baidu_vio_cnt: {
+            type: DataTypes.BIGINT,
             
             
         },
@@ -79,11 +63,19 @@ module.exports = (sequelize, DataTypes) => {
             
         },
         
+        
+        
+        toutiao_vio_cnt: {
+            type: DataTypes.BIGINT,
+            
+            
+        },
+        
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'skynet_whole_info',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return skynet_whole_info;
 };

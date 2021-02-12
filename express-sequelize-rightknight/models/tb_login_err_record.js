@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class tb_login_err_record extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,43 +13,11 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    tb_login_err_record.init({
         
         
         
-        author_id: {
-            type: DataTypes.BIGINT,
-            
-            
-        },
-        
-        
-        
-        pub_id: {
-            type: DataTypes.BIGINT,
-            
-            
-        },
-        
-        
-        
-        content: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        reply: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        status: {
+        user_id: {
             type: DataTypes.INTEGER,
             
             
@@ -57,33 +25,33 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        message_status: {
+        user_type: {
+            type: DataTypes.TINYINT,
+            
+            
+        },
+        
+        
+        
+        date: {
+            type: DataTypes.DATE,
+            
+            
+        },
+        
+        
+        
+        err_count: {
             type: DataTypes.INTEGER,
-            
-            
-        },
-        
-        
-        
-        create_time: {
-            type: DataTypes.BIGINT,
-            
-            
-        },
-        
-        
-        
-        modify_time: {
-            type: DataTypes.BIGINT,
             
             
         },
         
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'tb_login_err_record',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return tb_login_err_record;
 };

@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class api_vio_article extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,11 +13,11 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    api_vio_article.init({
         
         
         
-        author_id: {
+        apply_id: {
             type: DataTypes.BIGINT,
             
             
@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        pub_id: {
+        interface_id: {
             type: DataTypes.BIGINT,
             
             
@@ -33,16 +33,40 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        content: {
-            type: DataTypes.TEXT,
+        code: {
+            type: DataTypes.INTEGER,
             
             
         },
         
         
         
-        reply: {
-            type: DataTypes.TEXT,
+        original_url: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        original_title: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        plagiarism_url: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        plagiarism_title: {
+            type: DataTypes.STRING,
             
             
         },
@@ -57,8 +81,8 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        message_status: {
-            type: DataTypes.INTEGER,
+        remark: {
+            type: DataTypes.STRING,
             
             
         },
@@ -81,9 +105,9 @@ module.exports = (sequelize, DataTypes) => {
         
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'api_vio_article',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return api_vio_article;
 };

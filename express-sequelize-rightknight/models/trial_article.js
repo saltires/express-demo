@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class trial_article extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,20 +13,28 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    trial_article.init({
         
         
         
-        author_id: {
-            type: DataTypes.BIGINT,
+        url: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        pub_id: {
-            type: DataTypes.BIGINT,
+        site_type: {
+            type: DataTypes.INTEGER,
+            
+            
+        },
+        
+        
+        
+        title: {
+            type: DataTypes.STRING,
             
             
         },
@@ -34,31 +42,7 @@ module.exports = (sequelize, DataTypes) => {
         
         
         content: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        reply: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        status: {
-            type: DataTypes.INTEGER,
-            
-            
-        },
-        
-        
-        
-        message_status: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             
             
         },
@@ -81,9 +65,9 @@ module.exports = (sequelize, DataTypes) => {
         
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'trial_article',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return trial_article;
 };

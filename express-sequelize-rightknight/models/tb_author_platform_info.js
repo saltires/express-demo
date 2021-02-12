@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class tb_author_platform_info extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,11 +13,11 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    tb_author_platform_info.init({
         
         
         
-        author_id: {
+        fk_author_id: {
             type: DataTypes.BIGINT,
             
             
@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        pub_id: {
+        site_type: {
             type: DataTypes.BIGINT,
             
             
@@ -33,16 +33,24 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        content: {
-            type: DataTypes.TEXT,
+        site_homepage: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        reply: {
-            type: DataTypes.TEXT,
+        site_nick_name: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        certificat_url: {
+            type: DataTypes.STRING,
             
             
         },
@@ -57,8 +65,32 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        message_status: {
+        data_source: {
             type: DataTypes.INTEGER,
+            
+            
+        },
+        
+        
+        
+        author_openid: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        notify_url: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        memo: {
+            type: DataTypes.STRING,
             
             
         },
@@ -81,9 +113,9 @@ module.exports = (sequelize, DataTypes) => {
         
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'tb_author_platform_info',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return tb_author_platform_info;
 };

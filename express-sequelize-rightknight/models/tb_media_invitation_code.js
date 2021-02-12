@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class tb_media_invitation_code extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,43 +13,19 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    tb_media_invitation_code.init({
         
         
         
-        author_id: {
-            type: DataTypes.BIGINT,
+        code: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        pub_id: {
-            type: DataTypes.BIGINT,
-            
-            
-        },
-        
-        
-        
-        content: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        reply: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        status: {
+        media_type: {
             type: DataTypes.INTEGER,
             
             
@@ -57,8 +33,32 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        message_status: {
-            type: DataTypes.INTEGER,
+        media_name: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        media_account: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        media_id: {
+            type: DataTypes.BIGINT,
+            
+            
+        },
+        
+        
+        
+        creater_id: {
+            type: DataTypes.BIGINT,
             
             
         },
@@ -73,17 +73,33 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        modify_time: {
+        user_id: {
             type: DataTypes.BIGINT,
+            
+            
+        },
+        
+        
+        
+        use_time: {
+            type: DataTypes.BIGINT,
+            
+            
+        },
+        
+        
+        
+        status: {
+            type: DataTypes.INTEGER,
             
             
         },
         
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'tb_media_invitation_code',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return tb_media_invitation_code;
 };

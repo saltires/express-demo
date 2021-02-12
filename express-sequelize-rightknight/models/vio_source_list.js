@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class vio_source_list extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,11 +13,11 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    vio_source_list.init({
         
         
         
-        author_id: {
+        source_id: {
             type: DataTypes.BIGINT,
             
             
@@ -25,39 +25,23 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        pub_id: {
-            type: DataTypes.BIGINT,
+        source_url: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        content: {
-            type: DataTypes.TEXT,
+        source_name: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        reply: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        status: {
-            type: DataTypes.INTEGER,
-            
-            
-        },
-        
-        
-        
-        message_status: {
+        is_contraposed: {
             type: DataTypes.INTEGER,
             
             
@@ -79,11 +63,19 @@ module.exports = (sequelize, DataTypes) => {
             
         },
         
+        
+        
+        is_used: {
+            type: DataTypes.INTEGER,
+            
+            
+        },
+        
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'vio_source_list',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return vio_source_list;
 };

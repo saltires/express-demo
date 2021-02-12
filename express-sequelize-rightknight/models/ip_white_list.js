@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class ip_white_list extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,11 +13,11 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    ip_white_list.init({
         
         
         
-        author_id: {
+        apply_id: {
             type: DataTypes.BIGINT,
             
             
@@ -25,40 +25,8 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        pub_id: {
-            type: DataTypes.BIGINT,
-            
-            
-        },
-        
-        
-        
-        content: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        reply: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        status: {
-            type: DataTypes.INTEGER,
-            
-            
-        },
-        
-        
-        
-        message_status: {
-            type: DataTypes.INTEGER,
+        ip: {
+            type: DataTypes.STRING,
             
             
         },
@@ -71,19 +39,11 @@ module.exports = (sequelize, DataTypes) => {
             
         },
         
-        
-        
-        modify_time: {
-            type: DataTypes.BIGINT,
-            
-            
-        },
-        
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'ip_white_list',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return ip_white_list;
 };

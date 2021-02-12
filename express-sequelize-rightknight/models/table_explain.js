@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class table_explain extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,77 +13,61 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    table_explain.init({
         
         
         
-        author_id: {
-            type: DataTypes.BIGINT,
+        table_name: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        pub_id: {
-            type: DataTypes.BIGINT,
+        table_field: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        content: {
-            type: DataTypes.TEXT,
+        field_remark: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        reply: {
-            type: DataTypes.TEXT,
+        table_remark: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        status: {
-            type: DataTypes.INTEGER,
+        is_delete: {
+            type: DataTypes.SMALLINT,
             
             
         },
         
         
         
-        message_status: {
-            type: DataTypes.INTEGER,
-            
-            
-        },
-        
-        
-        
-        create_time: {
-            type: DataTypes.BIGINT,
-            
-            
-        },
-        
-        
-        
-        modify_time: {
-            type: DataTypes.BIGINT,
+        remark: {
+            type: DataTypes.STRING,
             
             
         },
         
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'table_explain',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return table_explain;
 };

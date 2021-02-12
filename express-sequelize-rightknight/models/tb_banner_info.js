@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class tb_banner_info extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,36 +13,36 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    tb_banner_info.init({
         
         
         
-        author_id: {
-            type: DataTypes.BIGINT,
+        title: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        pub_id: {
-            type: DataTypes.BIGINT,
+        describe: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        content: {
-            type: DataTypes.TEXT,
+        url: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        reply: {
-            type: DataTypes.TEXT,
+        picture: {
+            type: DataTypes.STRING,
             
             
         },
@@ -50,6 +50,14 @@ module.exports = (sequelize, DataTypes) => {
         
         
         status: {
+            type: DataTypes.TINYINT,
+            
+            
+        },
+        
+        
+        
+        sort: {
             type: DataTypes.INTEGER,
             
             
@@ -57,15 +65,7 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        message_status: {
-            type: DataTypes.INTEGER,
-            
-            
-        },
-        
-        
-        
-        create_time: {
+        publish_time: {
             type: DataTypes.BIGINT,
             
             
@@ -73,7 +73,23 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        modify_time: {
+        under_time: {
+            type: DataTypes.BIGINT,
+            
+            
+        },
+        
+        
+        
+        insert_time: {
+            type: DataTypes.BIGINT,
+            
+            
+        },
+        
+        
+        
+        update_time: {
             type: DataTypes.BIGINT,
             
             
@@ -81,9 +97,9 @@ module.exports = (sequelize, DataTypes) => {
         
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'tb_banner_info',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return tb_banner_info;
 };

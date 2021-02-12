@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class tb_media_process_code extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,11 +13,27 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    tb_media_process_code.init({
         
         
         
-        author_id: {
+        code: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        media_name: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        fk_media_id: {
             type: DataTypes.BIGINT,
             
             
@@ -25,24 +41,8 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        pub_id: {
+        fk_vio_id: {
             type: DataTypes.BIGINT,
-            
-            
-        },
-        
-        
-        
-        content: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        reply: {
-            type: DataTypes.TEXT,
             
             
         },
@@ -50,15 +50,7 @@ module.exports = (sequelize, DataTypes) => {
         
         
         status: {
-            type: DataTypes.INTEGER,
-            
-            
-        },
-        
-        
-        
-        message_status: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             
             
         },
@@ -81,9 +73,9 @@ module.exports = (sequelize, DataTypes) => {
         
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'tb_media_process_code',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return tb_media_process_code;
 };

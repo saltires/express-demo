@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class tb_base_menu_info extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,11 +13,11 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    tb_base_menu_info.init({
         
         
         
-        author_id: {
+        pId: {
             type: DataTypes.BIGINT,
             
             
@@ -25,31 +25,23 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        pub_id: {
-            type: DataTypes.BIGINT,
+        name: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        content: {
-            type: DataTypes.TEXT,
+        url: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        reply: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        status: {
+        orderby: {
             type: DataTypes.INTEGER,
             
             
@@ -57,33 +49,25 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        message_status: {
-            type: DataTypes.INTEGER,
+        model_desc: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        create_time: {
-            type: DataTypes.BIGINT,
-            
-            
-        },
-        
-        
-        
-        modify_time: {
-            type: DataTypes.BIGINT,
+        css_id: {
+            type: DataTypes.STRING,
             
             
         },
         
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'tb_base_menu_info',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return tb_base_menu_info;
 };

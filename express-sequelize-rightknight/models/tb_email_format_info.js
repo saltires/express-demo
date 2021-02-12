@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class tb_email_format_info extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,20 +13,20 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    tb_email_format_info.init({
         
         
         
-        author_id: {
-            type: DataTypes.BIGINT,
+        purpose: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        pub_id: {
-            type: DataTypes.BIGINT,
+        subject: {
+            type: DataTypes.STRING,
             
             
         },
@@ -34,56 +34,32 @@ module.exports = (sequelize, DataTypes) => {
         
         
         content: {
-            type: DataTypes.TEXT,
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        reply: {
-            type: DataTypes.TEXT,
+        image_source: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        status: {
-            type: DataTypes.INTEGER,
-            
-            
-        },
-        
-        
-        
-        message_status: {
-            type: DataTypes.INTEGER,
-            
-            
-        },
-        
-        
-        
-        create_time: {
-            type: DataTypes.BIGINT,
-            
-            
-        },
-        
-        
-        
-        modify_time: {
-            type: DataTypes.BIGINT,
+        attach_source: {
+            type: DataTypes.STRING,
             
             
         },
         
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'tb_email_format_info',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return tb_email_format_info;
 };

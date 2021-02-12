@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class tran_record extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,11 +13,11 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    tran_record.init({
         
         
         
-        author_id: {
+        auth_id: {
             type: DataTypes.BIGINT,
             
             
@@ -25,31 +25,7 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        pub_id: {
-            type: DataTypes.BIGINT,
-            
-            
-        },
-        
-        
-        
-        content: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        reply: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        status: {
+        type: {
             type: DataTypes.INTEGER,
             
             
@@ -57,8 +33,16 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        message_status: {
-            type: DataTypes.INTEGER,
+        detail: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        money: {
+            type: DataTypes.FLOAT,
             
             
         },
@@ -79,11 +63,35 @@ module.exports = (sequelize, DataTypes) => {
             
         },
         
+        
+        
+        status: {
+            type: DataTypes.INTEGER,
+            
+            
+        },
+        
+        
+        
+        alipay_account: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        alipay_name: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'tran_record',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return tran_record;
 };

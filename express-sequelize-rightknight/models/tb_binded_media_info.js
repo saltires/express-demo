@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class tb_binded_media_info extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,15 +13,7 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
-        
-        
-        
-        author_id: {
-            type: DataTypes.BIGINT,
-            
-            
-        },
+    tb_binded_media_info.init({
         
         
         
@@ -33,16 +25,40 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        content: {
-            type: DataTypes.TEXT,
+        media_type: {
+            type: DataTypes.INTEGER,
             
             
         },
         
         
         
-        reply: {
-            type: DataTypes.TEXT,
+        media_name: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        media_account: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        media_id: {
+            type: DataTypes.BIGINT,
+            
+            
+        },
+        
+        
+        
+        certificat_url: {
+            type: DataTypes.STRING,
             
             
         },
@@ -57,7 +73,7 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        message_status: {
+        type: {
             type: DataTypes.INTEGER,
             
             
@@ -65,15 +81,15 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        create_time: {
-            type: DataTypes.BIGINT,
+        remarks: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        modify_time: {
+        creation_time: {
             type: DataTypes.BIGINT,
             
             
@@ -81,9 +97,9 @@ module.exports = (sequelize, DataTypes) => {
         
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'tb_binded_media_info',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return tb_binded_media_info;
 };

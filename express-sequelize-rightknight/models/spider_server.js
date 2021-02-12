@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class spider_server extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,43 +13,11 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    spider_server.init({
         
         
         
-        author_id: {
-            type: DataTypes.BIGINT,
-            
-            
-        },
-        
-        
-        
-        pub_id: {
-            type: DataTypes.BIGINT,
-            
-            
-        },
-        
-        
-        
-        content: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        reply: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        status: {
+        type: {
             type: DataTypes.INTEGER,
             
             
@@ -57,8 +25,88 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        message_status: {
+        name: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        remote_ip: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        remote_port: {
             type: DataTypes.INTEGER,
+            
+            
+        },
+        
+        
+        
+        username: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        password: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        adsl_username: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        adsl_password: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        memo: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        load_average: {
+            type: DataTypes.FLOAT,
+            
+            
+        },
+        
+        
+        
+        disk_used: {
+            type: DataTypes.INTEGER,
+            
+            
+        },
+        
+        
+        
+        last_send_time: {
+            type: DataTypes.BIGINT,
             
             
         },
@@ -81,9 +129,9 @@ module.exports = (sequelize, DataTypes) => {
         
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'spider_server',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return spider_server;
 };

@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class vio_spider_task extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,11 +13,11 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    vio_spider_task.init({
         
         
         
-        author_id: {
+        fk_author_id: {
             type: DataTypes.BIGINT,
             
             
@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        pub_id: {
+        fk_article_id: {
             type: DataTypes.BIGINT,
             
             
@@ -33,16 +33,16 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        content: {
-            type: DataTypes.TEXT,
+        need_spider: {
+            type: DataTypes.INTEGER,
             
             
         },
         
         
         
-        reply: {
-            type: DataTypes.TEXT,
+        spider_page_num: {
+            type: DataTypes.INTEGER,
             
             
         },
@@ -57,8 +57,8 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        message_status: {
-            type: DataTypes.INTEGER,
+        next_update_time: {
+            type: DataTypes.BIGINT,
             
             
         },
@@ -79,11 +79,19 @@ module.exports = (sequelize, DataTypes) => {
             
         },
         
+        
+        
+        special_type: {
+            type: DataTypes.BIGINT,
+            
+            
+        },
+        
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'vio_spider_task',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return vio_spider_task;
 };

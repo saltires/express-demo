@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class table_operation_record extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,11 +13,11 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    table_operation_record.init({
         
         
         
-        author_id: {
+        fk_table_explain_id: {
             type: DataTypes.BIGINT,
             
             
@@ -25,7 +25,15 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        pub_id: {
+        operation: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        table_id: {
             type: DataTypes.BIGINT,
             
             
@@ -33,32 +41,24 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        content: {
-            type: DataTypes.TEXT,
+        field_value_old: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        reply: {
-            type: DataTypes.TEXT,
+        field_value_new: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        status: {
-            type: DataTypes.INTEGER,
-            
-            
-        },
-        
-        
-        
-        message_status: {
-            type: DataTypes.INTEGER,
+        is_delete: {
+            type: DataTypes.SMALLINT,
             
             
         },
@@ -81,9 +81,9 @@ module.exports = (sequelize, DataTypes) => {
         
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'table_operation_record',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return table_operation_record;
 };

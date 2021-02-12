@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class notices extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,11 +13,27 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    notices.init({
         
         
         
-        author_id: {
+        type: {
+            type: DataTypes.INTEGER,
+            
+            
+        },
+        
+        
+        
+        title: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        publish_date: {
             type: DataTypes.BIGINT,
             
             
@@ -25,7 +41,7 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        pub_id: {
+        end_date: {
             type: DataTypes.BIGINT,
             
             
@@ -34,56 +50,32 @@ module.exports = (sequelize, DataTypes) => {
         
         
         content: {
-            type: DataTypes.TEXT,
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        reply: {
-            type: DataTypes.TEXT,
+        act_url: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        status: {
-            type: DataTypes.INTEGER,
-            
-            
-        },
-        
-        
-        
-        message_status: {
-            type: DataTypes.INTEGER,
-            
-            
-        },
-        
-        
-        
-        create_time: {
-            type: DataTypes.BIGINT,
-            
-            
-        },
-        
-        
-        
-        modify_time: {
-            type: DataTypes.BIGINT,
+        picture_url: {
+            type: DataTypes.STRING,
             
             
         },
         
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'notices',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return notices;
 };

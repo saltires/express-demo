@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class tb_tag_pool extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,11 +13,11 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    tb_tag_pool.init({
         
         
         
-        author_id: {
+        pid: {
             type: DataTypes.BIGINT,
             
             
@@ -25,40 +25,24 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        pub_id: {
-            type: DataTypes.BIGINT,
+        tag_name: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        content: {
-            type: DataTypes.TEXT,
+        memo: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        reply: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        status: {
-            type: DataTypes.INTEGER,
-            
-            
-        },
-        
-        
-        
-        message_status: {
-            type: DataTypes.INTEGER,
+        image: {
+            type: DataTypes.STRING,
             
             
         },
@@ -71,19 +55,11 @@ module.exports = (sequelize, DataTypes) => {
             
         },
         
-        
-        
-        modify_time: {
-            type: DataTypes.BIGINT,
-            
-            
-        },
-        
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'tb_tag_pool',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return tb_tag_pool;
 };

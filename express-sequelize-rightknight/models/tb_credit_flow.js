@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class tb_credit_flow extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,11 +13,11 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    tb_credit_flow.init({
         
         
         
-        author_id: {
+        vio_id: {
             type: DataTypes.BIGINT,
             
             
@@ -33,23 +33,7 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        content: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        reply: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        status: {
+        dispose_type: {
             type: DataTypes.INTEGER,
             
             
@@ -57,7 +41,15 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        message_status: {
+        value: {
+            type: DataTypes.INTEGER,
+            
+            
+        },
+        
+        
+        
+        value_type: {
             type: DataTypes.INTEGER,
             
             
@@ -73,7 +65,31 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        modify_time: {
+        remark: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        url: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        article_id: {
+            type: DataTypes.BIGINT,
+            
+            
+        },
+        
+        
+        
+        binded_media_id: {
             type: DataTypes.BIGINT,
             
             
@@ -81,9 +97,9 @@ module.exports = (sequelize, DataTypes) => {
         
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'tb_credit_flow',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return tb_credit_flow;
 };

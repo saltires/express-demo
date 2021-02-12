@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class api_data_calculate extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,11 +13,11 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    api_data_calculate.init({
         
         
         
-        author_id: {
+        user_id: {
             type: DataTypes.BIGINT,
             
             
@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        pub_id: {
+        apply_id: {
             type: DataTypes.BIGINT,
             
             
@@ -33,32 +33,8 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        content: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        reply: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        status: {
-            type: DataTypes.INTEGER,
-            
-            
-        },
-        
-        
-        
-        message_status: {
-            type: DataTypes.INTEGER,
+        date: {
+            type: DataTypes.DATE,
             
             
         },
@@ -73,17 +49,33 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        modify_time: {
-            type: DataTypes.BIGINT,
+        authors_num: {
+            type: DataTypes.INTEGER,
+            
+            
+        },
+        
+        
+        
+        articles_num: {
+            type: DataTypes.INTEGER,
+            
+            
+        },
+        
+        
+        
+        vios_num: {
+            type: DataTypes.INTEGER,
             
             
         },
         
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'api_data_calculate',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return api_data_calculate;
 };

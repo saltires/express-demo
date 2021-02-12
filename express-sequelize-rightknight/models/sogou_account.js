@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class sogou_account extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,11 +13,17 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    sogou_account.init({
+        
+        account_id: {
+            type: DataTypes.BIGINT,
+            primaryKey: true,
+            autoIncrement: true,
+        },
         
         
         
-        author_id: {
+        user_no: {
             type: DataTypes.BIGINT,
             
             
@@ -25,7 +31,23 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        pub_id: {
+        user_pwd: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        cookies: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        last_update_time: {
             type: DataTypes.BIGINT,
             
             
@@ -33,57 +55,33 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        content: {
-            type: DataTypes.TEXT,
+        next_update_time: {
+            type: DataTypes.BIGINT,
             
             
         },
         
         
         
-        reply: {
-            type: DataTypes.TEXT,
+        last_used_time: {
+            type: DataTypes.BIGINT,
             
             
         },
         
         
         
-        status: {
+        user_type: {
             type: DataTypes.INTEGER,
-            
-            
-        },
-        
-        
-        
-        message_status: {
-            type: DataTypes.INTEGER,
-            
-            
-        },
-        
-        
-        
-        create_time: {
-            type: DataTypes.BIGINT,
-            
-            
-        },
-        
-        
-        
-        modify_time: {
-            type: DataTypes.BIGINT,
             
             
         },
         
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'sogou_account',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return sogou_account;
 };

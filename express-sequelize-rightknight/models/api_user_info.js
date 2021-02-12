@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class api_user_info extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,36 +13,36 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    api_user_info.init({
         
         
         
-        author_id: {
-            type: DataTypes.BIGINT,
+        account: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        pub_id: {
-            type: DataTypes.BIGINT,
+        password: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        content: {
-            type: DataTypes.TEXT,
+        resource_type: {
+            type: DataTypes.INTEGER,
             
             
         },
         
         
         
-        reply: {
-            type: DataTypes.TEXT,
+        type: {
+            type: DataTypes.INTEGER,
             
             
         },
@@ -57,8 +57,16 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        message_status: {
-            type: DataTypes.INTEGER,
+        developer: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        remark: {
+            type: DataTypes.STRING,
             
             
         },
@@ -81,9 +89,9 @@ module.exports = (sequelize, DataTypes) => {
         
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'api_user_info',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return api_user_info;
 };

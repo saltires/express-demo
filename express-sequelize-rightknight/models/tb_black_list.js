@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class tb_black_list extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,36 +13,20 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    tb_black_list.init({
         
         
         
-        author_id: {
-            type: DataTypes.BIGINT,
+        media_name: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        pub_id: {
-            type: DataTypes.BIGINT,
-            
-            
-        },
-        
-        
-        
-        content: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        reply: {
-            type: DataTypes.TEXT,
+        media_url: {
+            type: DataTypes.STRING,
             
             
         },
@@ -57,7 +41,7 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        message_status: {
+        show_status: {
             type: DataTypes.INTEGER,
             
             
@@ -81,9 +65,9 @@ module.exports = (sequelize, DataTypes) => {
         
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'tb_black_list',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return tb_black_list;
 };

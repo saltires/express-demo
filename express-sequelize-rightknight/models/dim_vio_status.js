@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class dim_vio_status extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,39 +13,7 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
-        
-        
-        
-        author_id: {
-            type: DataTypes.BIGINT,
-            
-            
-        },
-        
-        
-        
-        pub_id: {
-            type: DataTypes.BIGINT,
-            
-            
-        },
-        
-        
-        
-        content: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        reply: {
-            type: DataTypes.TEXT,
-            
-            
-        },
+    dim_vio_status.init({
         
         
         
@@ -57,7 +25,15 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        message_status: {
+        memo: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        sort: {
             type: DataTypes.INTEGER,
             
             
@@ -65,25 +41,17 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        create_time: {
-            type: DataTypes.BIGINT,
-            
-            
-        },
-        
-        
-        
-        modify_time: {
-            type: DataTypes.BIGINT,
+        is_used: {
+            type: DataTypes.INTEGER,
             
             
         },
         
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'dim_vio_status',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return dim_vio_status;
 };

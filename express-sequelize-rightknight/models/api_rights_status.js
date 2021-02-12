@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class api_rights_status extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,11 +13,11 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    api_rights_status.init({
         
         
         
-        author_id: {
+        apply_id: {
             type: DataTypes.BIGINT,
             
             
@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        pub_id: {
+        interface_id: {
             type: DataTypes.BIGINT,
             
             
@@ -33,16 +33,24 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        content: {
-            type: DataTypes.TEXT,
+        code: {
+            type: DataTypes.INTEGER,
             
             
         },
         
         
         
-        reply: {
-            type: DataTypes.TEXT,
+        plagiarism_url: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        plagiarism_title: {
+            type: DataTypes.STRING,
             
             
         },
@@ -57,8 +65,8 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        message_status: {
-            type: DataTypes.INTEGER,
+        remark: {
+            type: DataTypes.STRING,
             
             
         },
@@ -79,11 +87,19 @@ module.exports = (sequelize, DataTypes) => {
             
         },
         
+        
+        
+        decrypt_content: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'api_rights_status',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return api_rights_status;
 };

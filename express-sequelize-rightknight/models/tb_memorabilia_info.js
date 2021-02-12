@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class tb_memorabilia_info extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,11 +13,27 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    tb_memorabilia_info.init({
         
         
         
-        author_id: {
+        year: {
+            type: DataTypes.INTEGER,
+            
+            
+        },
+        
+        
+        
+        type: {
+            type: DataTypes.TINYINT,
+            
+            
+        },
+        
+        
+        
+        occur_time: {
             type: DataTypes.BIGINT,
             
             
@@ -25,8 +41,8 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        pub_id: {
-            type: DataTypes.BIGINT,
+        title: {
+            type: DataTypes.STRING,
             
             
         },
@@ -34,31 +50,15 @@ module.exports = (sequelize, DataTypes) => {
         
         
         content: {
-            type: DataTypes.TEXT,
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        reply: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        status: {
-            type: DataTypes.INTEGER,
-            
-            
-        },
-        
-        
-        
-        message_status: {
-            type: DataTypes.INTEGER,
+        url: {
+            type: DataTypes.STRING,
             
             
         },
@@ -73,7 +73,7 @@ module.exports = (sequelize, DataTypes) => {
         
         
         
-        modify_time: {
+        update_time: {
             type: DataTypes.BIGINT,
             
             
@@ -81,9 +81,9 @@ module.exports = (sequelize, DataTypes) => {
         
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'tb_memorabilia_info',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return tb_memorabilia_info;
 };

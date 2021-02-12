@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class feedback extends Model {
+    class site_resource_list extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,52 +13,28 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    feedback.init({
+    site_resource_list.init({
         
         
         
-        author_id: {
-            type: DataTypes.BIGINT,
+        site_type: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        pub_id: {
-            type: DataTypes.BIGINT,
+        site_name: {
+            type: DataTypes.STRING,
             
             
         },
         
         
         
-        content: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        reply: {
-            type: DataTypes.TEXT,
-            
-            
-        },
-        
-        
-        
-        status: {
-            type: DataTypes.INTEGER,
-            
-            
-        },
-        
-        
-        
-        message_status: {
-            type: DataTypes.INTEGER,
+        site_url: {
+            type: DataTypes.STRING,
             
             
         },
@@ -79,11 +55,35 @@ module.exports = (sequelize, DataTypes) => {
             
         },
         
+        
+        
+        app_id: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        app_secret: {
+            type: DataTypes.STRING,
+            
+            
+        },
+        
+        
+        
+        vio_source_list_id: {
+            type: DataTypes.BIGINT,
+            
+            
+        },
+        
         },{
         sequelize,
-        modelName: 'feedback',
+        modelName: 'site_resource_list',
         timestamps: false,
         freezeTableName: true
     });
-    return feedback;
+    return site_resource_list;
 };
